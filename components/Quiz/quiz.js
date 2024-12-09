@@ -38,13 +38,15 @@ export default function Quiz() {
     setSelectedAnswer(null);
   };
 
-  const handleNext = () => {
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-      setSelectedAnswer(null); // Reset selection for the new question
-    } else {
-      setIsFinished(true);
+ const handleNext = () => {
+    if (selectedAnswer !== null) { // Only move to the next question if an answer is selected
+      const nextQuestion = currentQuestion + 1;
+      if (nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion);
+        setSelectedAnswer(null); // Reset selection for the new question
+      } else {
+        setIsFinished(true);
+      }
     }
   };
 const handlePrevious=()=>{
