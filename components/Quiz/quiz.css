@@ -1,0 +1,166 @@
+/* General body styles for better aesthetics */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Center the quiz container */
+.quiz-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Title styling */
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Answer button styles */
+.answer-btn {
+  padding: 15px 30px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #333; /* Default text color */
+  background-color: #ffffff; /* Default background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for 3D effect */
+}
+
+/* Hover effect for non-selected buttons */
+.answer-btn:hover:not(.green):not(.red):not(:disabled) {
+  background-color: black; /* Slight hover effect */
+  transform: scale(1.05); /* Slightly grow the button */
+}
+
+/* Correct answer styling */
+.answer-btn.green {
+  background-color: #28a745 !important; /* Green background for correct */
+  color: white !important; /* White text for correct */
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4); /* Green shadow for effect */
+  transform: scale(1.1); /* Slightly grow the button */
+}
+
+/* Incorrect answer styling */
+.answer-btn.red {
+  background-color: #dc3545 !important; /* Red background for incorrect */
+  color: white !important; /* White text for incorrect */
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4); /* Red shadow for effect */
+  transform: scale(1.1); /* Slightly grow the button */
+}
+
+/* Prevent hover effects on selected buttons */
+.answer-btn.green:hover,
+.answer-btn.red:hover {
+  background-color: inherit; /* Keep the selected color */
+  cursor: not-allowed; /* Prevent further interaction */
+}
+
+/* Styling for disabled buttons */
+.answer-btn:disabled {
+  opacity: 1; /* Ensure text stays fully visible */
+  cursor: not-allowed; /* Indicate that the button is disabled */
+}
+
+/* Buttons for navigating to next/previous question */
+.next-btn,
+.previous-btn {
+  padding: 12px 25px;
+  margin: 15px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3); /* Shadow for depth */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effect for next/previous buttons */
+.next-btn:hover, .previous-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 600px) {
+  .answer-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .next-btn,
+  .previous-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .quiz-container {
+    margin: 20px;
+    padding: 15px;
+  }
+}
+/* Styles for the quiz completion and score section */
+.quiz-completed {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.quiz-completed h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.quiz-completed p {
+  font-size: 18px;
+  color: #555;
+}
+
+.quiz-completed .score {
+  font-size: 36px;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.quiz-completed .score span {
+  color: #28a745; /* Green color for the score */
+}
+
+.quiz-completed button {
+  padding: 12px 25px;
+  margin-top: 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.4);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.quiz-completed button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
