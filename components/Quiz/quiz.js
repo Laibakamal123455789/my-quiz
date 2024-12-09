@@ -38,7 +38,7 @@ export default function Quiz() {
     setSelectedAnswer(null);
   };
 
- const handleNext = () => {
+  const handleNext = () => {
     if (selectedAnswer !== null) { // Only move to the next question if an answer is selected
       const nextQuestion = currentQuestion + 1;
       if (nextQuestion < questions.length) {
@@ -49,6 +49,7 @@ export default function Quiz() {
       }
     }
   };
+  
 const handlePrevious=()=>{
   const previousQuestion = currentQuestion - 1;
  if (previousQuestion >= 0) {
